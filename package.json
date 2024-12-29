@@ -4,7 +4,9 @@
   "license": "MIT",
   "scripts": {
     "serve": "npx nx run portfolio:serve:development",
-    "serve-no-hmr": "npx nx run portfolio:serve:development --no-hmr"
+    "serve-no-hmr": "npx nx run portfolio:serve:development --no-hmr",
+    "serve-local": "http-server dist/apps/portfolio/browser -a localhost -p 8000 -c-1",
+    "build-local": "npx nx run portfolio:build:production"
   },
   "private": true,
   "dependencies": {
