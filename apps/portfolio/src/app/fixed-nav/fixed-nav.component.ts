@@ -7,15 +7,14 @@ import { createInjectionToken } from '../shared/helpers/token.helper';
 export const IS_MOBILE_NAV_ENABLED = createInjectionToken(signal(false));
 
 @Component({
-  selector: 'fixed-nav',
-  templateUrl: './fixed-nav.component.html',
-  styleUrls: ['./fixed-nav.component.scss'],
-  standalone: true,
-  imports: [
-    SharedModule,
-    RouterModule
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'fixed-nav',
+    templateUrl: './fixed-nav.component.html',
+    styleUrls: ['./fixed-nav.component.scss'],
+    imports: [
+        SharedModule,
+        RouterModule
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FixedNavComponent {
   isMobileNavEnabled = inject(IS_MOBILE_NAV_ENABLED);

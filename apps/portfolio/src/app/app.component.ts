@@ -12,16 +12,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import LazyLoad from 'vanilla-lazyload';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  standalone: true,
-  imports: [
-    RouterOutlet,
-    SharedModule,
-    FixedNavComponent
-  ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    imports: [
+        RouterOutlet,
+        SharedModule,
+        FixedNavComponent
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   
