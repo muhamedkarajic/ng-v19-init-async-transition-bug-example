@@ -1,0 +1,267 @@
+:host{
+   position: absolute;
+   width: auto;
+   height: 100vh;
+}
+:host ::ng-deep {
+   .links-wrap my-button {
+      width: 100%;
+   }
+   .fixed-nav-back {
+      position: fixed;
+      background: linear-gradient(to right, hsla(220, 13%, 0%, .3) 40%, hsla(220, 13%, 0%, 1) 80%);
+      opacity: 0;
+      transition: opacity .8s cubic-bezier(.7, 0, .2, 1);
+      z-index: 100;
+      pointer-events: none;
+      will-change: opacity;
+   }
+
+   .nav-active .fixed-nav-back {
+      opacity: .35;
+      pointer-events: all;
+   }
+
+   .fixed-nav {
+      position: fixed;
+      right: 0;
+      top: 0;
+      height: 100vh;
+      background: red;
+      z-index: 100;
+      transform: translate3d(calc(100% + 6vw), 0, 0) rotate3d(0, 0, 1, 0.001deg);
+      transition: transform .8s cubic-bezier(.7, 0, .2, 1);
+      will-change: transform;
+   }
+
+   .nav-active .fixed-nav {
+      transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0.001deg);
+   }
+
+   .fixed-nav-inner {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      padding: 15vh 7.5vw 10vh 7.5vw;
+      position: relative;
+      transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0.001deg);
+      transition: all .6s cubic-bezier(.7, 0, .2, 1);
+      will-change: transform;
+   }
+
+   .nav-active .fixed-nav-inner {
+      transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0.001deg);
+   }
+
+   .fixed-nav .nav-row h5 {
+      margin-bottom: 3em;
+   }
+
+   .fixed-nav .nav-row ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 5vh;
+   }
+
+   .fixed-nav .nav-row .btn-link .btn-click {
+      height: auto;
+   }
+
+
+   .fixed-nav .nav-row ul {
+      margin-left: calc(var(--gap-padding) / -2);
+   }
+
+   .fixed-nav .nav-row .btn-text-inner {
+      font-size: 3.5em;
+      line-height: 1.4;
+      font-size: calc(clamp(3.25em, 5vw, 4em) * .875);
+   }
+
+   .fixed-nav .nav-row .btn-link .btn-click::after {
+      background: red;
+      left: calc(var(--gap-padding) / -4);
+      top: 50%;
+      bottom: auto;
+      width: calc(clamp(16px, 1.2vw, 19px) / 1.65);
+      height: calc(clamp(16px, 1.2vw, 19px) / 1.65);
+   }
+
+   .fixed-nav .social-row {
+      margin-left: calc(var(--gap-padding) / -4);
+   }
+
+   .fixed-nav-rounded-div {
+      position: absolute;
+      left: 1px;
+      transform: translateX(-100%);
+      height: 100%;
+      top: 0;
+   }
+
+   .fixed-nav-rounded-div .rounded-div-wrap {
+      width: 6vw;
+      height: 100%;
+      transition: var(--animation-slow);
+      transition: all .85s cubic-bezier(.7, 0, .2, 1);
+      will-change: width;
+   }
+
+   .nav-active .fixed-nav-rounded-div .rounded-div-wrap {
+      width: 0vw;
+   }
+
+   .fixed-nav-rounded-div .rounded-div-wrap .rounded-div {
+      background: red;
+      height: 150%;
+      content: "";
+      display: block;
+      position: absolute;
+      width: 775%;
+      top: 50%;
+      border-radius: 50%;
+      transform: translate3d(-6.5%, -50%, 0);
+   }
+
+   .fixed-nav .nav-row ul .btn {
+      transform: translate3d(15vw, 0, 0) rotate3d(0, 0, 1, 0.001deg);
+      transition: all .8s cubic-bezier(.7, 0, .2, 1);
+      will-change: transform;
+   }
+
+   .nav-active .fixed-nav .nav-row ul .btn {
+      transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0.001deg);
+   }
+
+   .fixed-nav .nav-row ul .btn:nth-child(2) {
+      transition-delay: .03s;
+   }
+
+   .fixed-nav .nav-row ul .btn:nth-child(3) {
+      transition-delay: .06s;
+   }
+
+   .fixed-nav .nav-row ul .btn:nth-child(4) {
+      transition-delay: .09s;
+   }
+
+
+   .fixed-nav .social-row .stripe {
+      display: none;
+   }
+
+   .fixed-nav .nav-row ul .btn .btn-text {
+      justify-content: flex-start;
+   }
+
+   .fixed-nav .socials ul .btn .btn-click {
+      margin: 0!important;
+   }
+
+   @media screen and (max-height: 680px) {
+      .fixed-nav .nav-row .btn-text-inner {
+         font-size: 3em;
+         line-height: 1.25;
+      }
+   }
+   
+   @media screen and (max-width: 540px) {
+
+      .fixed-nav-back {
+         background: hsla(220, 13%, 5%, 1);
+      }
+
+      .fixed-nav {
+         width: 100%;
+         transform: translate3d(calc(100% + 20vw), 0, 0) rotate3d(0, 0, 1, 0.001deg);
+      }
+
+      .fixed-nav .fixed-nav-inner {
+         height: calc(var(--vh, 1vh) * 100);
+         padding: calc(var(--vh, 1vh) * 15) var(--container-padding) calc(var(--gap-padding) * 1.25) var(--container-padding);
+         transform: translate3d(20vw, 0, 0) rotate3d(0, 0, 1, 0.001deg);
+         transition-delay: 0s;
+      }
+
+      .nav-active .fixed-nav .fixed-nav-inner {
+         transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0.001deg);
+         transition-delay: .1s;
+      }
+
+      .fixed-nav .nav-row .btn-link .btn-click::after {
+         background: red;
+         left: auto;
+         right: .4em;
+         top: 50%;
+         bottom: auto;
+         width: calc(clamp(16px, 1.2vw, 19px) / 1.5);
+         height: calc(clamp(16px, 1.2vw, 19px) / 1.5);
+      }
+
+      .fixed-nav .nav-row ul {
+         width: 100%;
+         padding-top: calc(var(--vh, 1vh) * 3);
+         padding-bottom: calc(var(--vh, 1vh) * 3);
+      }
+
+      .fixed-nav .nav-row ul .btn {
+         width: 100%;
+         transition: all .8s cubic-bezier(.7, 0, .2, 1);
+      }
+
+      .fixed-nav .social-row .stripe {
+         display: block;
+         margin-bottom: calc(var(--section-padding) / 3);
+      }
+
+      .fixed-nav-rounded-div .rounded-div-wrap {
+         width: 20vw;
+      }
+
+      .nav-active .fixed-nav-rounded-div .rounded-div-wrap {
+         width: 0;
+      }
+
+      .fixed-nav .nav-row ul .btn:nth-child(1) {
+         transition-delay: 0s;
+      }
+
+      .fixed-nav .nav-row ul .btn:nth-child(2) {
+         transition-delay: .03s;
+      }
+
+      .fixed-nav .nav-row ul .btn:nth-child(3) {
+         transition-delay: .06s;
+      }
+
+      .fixed-nav .nav-row ul .btn:nth-child(4) {
+         transition-delay: .09s;
+      }
+
+      .nav-active .fixed-nav .nav-row ul .btn:nth-child(1) {
+         transition-delay: .1s;
+      }
+
+      .nav-active .fixed-nav .nav-row ul .btn:nth-child(2) {
+         transition-delay: .13s;
+      }
+
+      .nav-active .fixed-nav .nav-row ul .btn:nth-child(3) {
+         transition-delay: .16s;
+      }
+
+      .nav-active .fixed-nav .nav-row ul .btn:nth-child(4) {
+         transition-delay: .19s;
+      }
+   }
+
+}
+
+.hamburger-wrapper
+{
+   position: absolute;
+   right: 0;
+   z-index: 105;
+}
