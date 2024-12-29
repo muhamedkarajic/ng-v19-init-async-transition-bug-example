@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "serve": "npx nx run portfolio:serve:development",
-    "serve-no-hrm": "npx nx run portfolio:serve:development --no-hmr"
+    "serve-no-hmr": "npx nx run portfolio:serve:development --no-hmr"
   },
   "private": true,
   "dependencies": {
